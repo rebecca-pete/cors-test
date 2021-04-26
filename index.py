@@ -3,11 +3,11 @@ import tornado.ioloop
 
 class basicRequestHandler(tornado.web.RequestHandler):
     def get(self):
-        self.set_header("Access-Control-Allow-Origin", "*")
+        self.set_header("Access-Control-Allow-Origin", "gcp-public-data-landsat.storage.googleapis.com")
         self.write(f"Served successfully.")
 
     def options(self):
-        self.set_header("Access-Control-Allow-Origin", "*")
+        self.set_header("Access-Control-Allow-Origin", "gcp-public-data-landsat.storage.googleapis.com")
         self.set_header("Access-Control-Allow-Headers", "Content-Type")
         self.set_status(204)
         self.finish()
